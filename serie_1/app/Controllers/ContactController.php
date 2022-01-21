@@ -3,14 +3,17 @@
 namespace Controllers;
 
 use Models\ContactModel;
+use Util\View;
 
 class ContactController
 {
-    public function listContacts() {
+    public function listContacts()
+    {
         $model = new ContactModel();
         $contacts = $model->getContacts();
 
-        require(__DIR__.'/../views/contacts/index.php');
+        $view = new View();
+        echo $view->render('contacts/index', compact('contacts'));
     }
 }
 
