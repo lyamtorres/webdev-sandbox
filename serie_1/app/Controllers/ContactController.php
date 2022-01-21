@@ -6,13 +6,11 @@ use Models\ContactModel;
 
 class ContactController
 {
-    function listContacts() {
-        $list = new ContactModel();
-        $array = $list->getContacts();
+    public function listContacts() {
+        $model = new ContactModel();
+        $contacts = $model->getContacts();
 
-        foreach ($array as $value) {
-            echo "$value <br>"  ;
-        }
+        require(__DIR__.'/../views/contacts/index.php');
     }
 }
 

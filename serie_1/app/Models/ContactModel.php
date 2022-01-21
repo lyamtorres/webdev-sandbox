@@ -4,7 +4,7 @@ namespace Models;
 
 class ContactModel
 {
-    function getContacts() {
+    public function getContacts() {
         return ['Gwen', 'Marie', 'Tiffany', 'Jonathan'];
     }
 }
