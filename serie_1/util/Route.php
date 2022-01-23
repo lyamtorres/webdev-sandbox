@@ -1,6 +1,9 @@
-<?php namespace Util;
+<?php
+
+namespace Util;
 
 use Util\View;
+use Config\Configuration;
 
 class Route
 {
@@ -9,7 +12,7 @@ class Route
         $url = explode('/', $_SERVER['REQUEST_URI']); // Break the url into an array
         $nbParam = count($url);
 
-        $namespace = "Controllers";
+        $namespace = Configuration::$default_namespace;
         $controller = $url[$nbParam - 2];
         $method = $url[$nbParam - 1];
         $class = $namespace."\\".$controller;
@@ -29,6 +32,14 @@ class Route
 
     public function not_found()
     {
+        $namespace = Configuration::$default_namespace;
+        $controller = Configuration::$default_class_name;
+        $method = Configuration::$default_function_name;
+        $class = $namespace."\\".$controller;
+
+        $classInstance = new $class;
+        call_user_func_array(array($classInstance, $method), $args=[]);
+
         $view = new View();
         return $view->render('404');
     }
