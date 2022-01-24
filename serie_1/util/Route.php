@@ -3,7 +3,7 @@
 namespace Util;
 
 use Util\View;
-use Config\Configuration;
+use Configuration\Config;
 
 class Route
 {
@@ -12,7 +12,7 @@ class Route
         $url = explode('/', $_SERVER['REQUEST_URI']); // Break the url into an array
         $nbParam = count($url);
 
-        $namespace = Configuration::$default_namespace;
+        $namespace = Config::$default_namespace;
         $controller = $url[$nbParam - 2];
         $method = $url[$nbParam - 1];
         $class = $namespace."\\".$controller;
@@ -32,9 +32,9 @@ class Route
 
     public function not_found()
     {
-        $namespace = Configuration::$default_namespace;
-        $controller = Configuration::$default_class_name;
-        $method = Configuration::$default_function_name;
+        $namespace = Config::$default_namespace;
+        $controller = Config::$default_class_name;
+        $method = Config::$default_function_name;
         $class = $namespace."\\".$controller;
 
         $classInstance = new $class;

@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/../files_to_include.php';
+require_once "../vendor/autoload.php";
 
 use Util\Route;
 
