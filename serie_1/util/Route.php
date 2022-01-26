@@ -38,6 +38,7 @@ class Route
         $class = $namespace."\\".$controller;
 
         $classInstance = new $class;
+
         call_user_func_array(array($classInstance, $method), $args=[]);
 
         $view = new View();

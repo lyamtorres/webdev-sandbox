@@ -10,6 +10,7 @@ return array(
     'Util\\' => array($baseDir . '/util'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Models\\' => array($baseDir . '/app/Models'),
+    'Entity\\' => array($baseDir . '/app/Entity'),
     'Controllers\\' => array($baseDir . '/app/Controllers'),
     'Configuration\\' => array($baseDir . '/config'),
 );

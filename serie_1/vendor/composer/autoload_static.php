@@ -23,6 +23,10 @@ class ComposerStaticInit3f9dbe61b21662c24f690465bd0f390c
         array (
             'Models\\' => 7,
         ),
+        'E' => 
+        array (
+            'Entity\\' => 7,
+        ),
         'C' => 
         array (
             'Controllers\\' => 12,
@@ -46,6 +50,10 @@ class ComposerStaticInit3f9dbe61b21662c24f690465bd0f390c
         'Models\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/Models',
+        ),
+        'Entity\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/Entity',
         ),
         'Controllers\\' => 
         array (
